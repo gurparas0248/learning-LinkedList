@@ -86,6 +86,9 @@ public class LinkedList {
 
     //remove first
     public int removefirst(){
+        if(size==0){
+            System.out.println("LL is empty");
+        }
         int val= head.data;
         head=head.next;
         return val;
