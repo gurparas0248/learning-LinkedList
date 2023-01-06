@@ -84,6 +84,13 @@ public class LinkedList {
 
     }
 
+    //remove first
+    public int removefirst(){
+        int val= head.data;
+        head=head.next;
+        return val;
+    }
+
     public static void main(String[] args) {
 
         LinkedList ll=new LinkedList();
@@ -95,6 +102,8 @@ public class LinkedList {
         ll.addIndex(3,10);
         ll.print();
         System.out.println(ll.size);
+        ll.removefirst();
+        ll.print();
 
 
 
