@@ -47,9 +47,30 @@ public class LinkedList {
         tail=newNode;
     }
 
+    //printing LL
+
+    public void print(){
+        if(head==null){
+            System.out.println("empty ll");
+            return;
+        }
+        Node temp=head;
+        while(temp!=null){
+            System.out.print(temp.data+"->");
+            temp=temp.next;
+        }
+        System.out.println("null");
+    }
+
     public static void main(String[] args) {
 
         LinkedList ll=new LinkedList();
+        ll.print();
+        ll.addFirst(2);
+        ll.addFirst(5);
+        ll.addLast(6);
+        ll.addLast(9);
+        ll.print();
 
 
     }
