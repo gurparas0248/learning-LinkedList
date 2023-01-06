@@ -64,6 +64,10 @@ public class LinkedList {
 
     //add index
     public void addIndex(int index,int data){
+        if(index==0){
+            addFirst(data);
+            return;
+        }
         Node newNode=new Node(data);
         Node temp=head;
         int i=0;
@@ -84,7 +88,9 @@ public class LinkedList {
         ll.addFirst(5);
         ll.addLast(6);
         ll.addLast(9);
+        ll.addIndex(3,10);
         ll.print();
+
 
 
     }
