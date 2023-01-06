@@ -88,6 +88,12 @@ public class LinkedList {
     public int removefirst(){
         if(size==0){
             System.out.println("LL is empty");
+            return Integer.MIN_VALUE;
+        } else if (size==1) {
+            int val=head.data;
+            head=tail=null;
+            return val;
+
         }
         int val= head.data;
         head=head.next;
