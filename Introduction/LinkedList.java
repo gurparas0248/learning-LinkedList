@@ -22,6 +22,7 @@ public class LinkedList {
     search()
     */
 
+    //add first
     public void addFirst(int data){
         Node newNode=new Node(data);
 
@@ -31,6 +32,19 @@ public class LinkedList {
         }
         newNode.next=head;
         head=newNode;
+    }
+
+    //add last
+    public void addLast(int data){
+        Node newNode=new Node(data);
+
+        if (head==null){
+            head=tail=newNode;
+            return;
+        }
+
+        tail.next=newNode;
+        tail=newNode;
     }
 
     public static void main(String[] args) {
