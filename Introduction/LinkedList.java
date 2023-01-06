@@ -62,6 +62,20 @@ public class LinkedList {
         System.out.println("null");
     }
 
+    //add index
+    public void addIndex(int index,int data){
+        Node newNode=new Node(data);
+        Node temp=head;
+        int i=0;
+        while(i<index-1){
+            temp=temp.next;
+            i++;
+        }
+        newNode.next=temp.next;
+        temp.next=newNode;
+
+    }
+
     public static void main(String[] args) {
 
         LinkedList ll=new LinkedList();
