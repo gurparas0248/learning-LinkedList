@@ -196,6 +196,17 @@ public class LinkedList {
         prev.next=prev.next.next;
         return;
     }
+    //finding middle node
+    public Node findMid(Node haad){
+        Node slow=head;
+        Node fast=head;
+
+        while(fast!=null && fast.next!=null){
+            slow=slow.next; //+1
+            fast=fast.next.next; //+2
+        }
+        return slow; //slow is mid
+    }
     public static void main(String[] args) {
 
         LinkedList ll=new LinkedList();
