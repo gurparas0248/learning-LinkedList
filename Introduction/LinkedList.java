@@ -158,6 +158,21 @@ public class LinkedList {
         return helper(head,key);
     }
 
+    //reverse a Linked List
+    public void reverse(){
+        Node prev=null;
+        Node curr=tail=head;
+        Node next;
+        while(curr!=null){
+            next=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=next;
+        }
+        head=prev;
+    }
+
+    //deleteNthfromEnd
     public static void main(String[] args) {
 
         LinkedList ll=new LinkedList();
@@ -168,10 +183,9 @@ public class LinkedList {
         ll.addLast(9);
         ll.addIndex(3,10);
         ll.print();
-        System.out.println(ll.search(2));
-        System.out.println(ll.search(9));
-        System.out.println(ll.search(11));
-        System.out.println(ll.recSearch(6));
+
+        ll.reverse();
+        ll.print();
 
 
 
