@@ -196,7 +196,7 @@ public class LinkedList {
         prev.next=prev.next.next;
         return;
     }
-    //finding middle node
+    //finding middle node (Slow fast Approach)
     public Node findMid(Node haad){
         Node slow=head;
         Node fast=head;
@@ -207,19 +207,49 @@ public class LinkedList {
         }
         return slow; //slow is mid
     }
+
+    public boolean checkPalindrome(){
+        if(head==null || head.next==null){
+            return true;
+        }
+        //step1- find mid
+
+        Node midNode=findMid(head);
+
+        //step2- reverse 2nd half
+        Node prev=null;
+        Node curr=midNode;
+        Node next;
+        while(curr!=null){
+            next=curr.next;
+            curr.next=midNode;
+            prev=curr;
+            curr=next;
+        }
+
+        Node right =prev; //right half head
+        Node left=head; // left half head
+
+        //step3 - check left half and right half
+        while(right!=null){
+            if(left.data!= right.data){
+                return false;
+            }
+            left=left.next;
+            right=right.next;
+        }
+
+        return true;
+    }
     public static void main(String[] args) {
 
         LinkedList ll=new LinkedList();
+        ll.addLast(1);
+        ll.addLast(2);
+        ll.addLast(2);
+        ll.addLast(3);
         ll.print();
-        ll.addFirst(2);
-        ll.addFirst(5);
-        ll.addLast(6);
-        ll.addLast(9);
-        ll.addIndex(3,10);
-        ll.print();
-
-        ll.reverse();
-        ll.print();
+        System.out.println(ll.checkPalindrome());
 
 
 
