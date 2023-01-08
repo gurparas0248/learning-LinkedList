@@ -241,15 +241,28 @@ public class LinkedList {
 
         return true;
     }
+
+    //Detecting Cycle in ll
+    public static boolean isCycle(){
+        Node slow=head;
+        Node fast=head;
+
+        while(fast!=null && fast.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+            if(slow==fast){
+                return true;
+            }
+        }
+        return false;
+    }
     public static void main(String[] args) {
 
-        LinkedList ll=new LinkedList();
-        ll.addLast(1);
-        ll.addLast(2);
-        ll.addLast(2);
-        ll.addLast(3);
-        ll.print();
-        System.out.println(ll.checkPalindrome());
+        head=new Node(1);
+        head.next=new Node(2);
+        head.next.next=new Node(3);
+        //head.next.next.next=new Node(4);
+        System.out.println(isCycle());
 
 
 
