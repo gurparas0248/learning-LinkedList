@@ -30,7 +30,14 @@ public class DoublyLL {
         head=newNode;
     }
 
-    
+    //print
+    public void print(){
+        Node temp=head;
+        while(temp!=null){
+            System.out.print(temp.data+"<->");
+        }
+        System.out.println("null");
+    }
     public static void main(String[] args) {
 
 
