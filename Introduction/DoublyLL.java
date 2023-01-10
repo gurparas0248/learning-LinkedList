@@ -16,8 +16,23 @@ public class DoublyLL {
     public static Node head;
     public static Node tail;
     public static int size;
+
+    //add
+    public void addfirst(int data){
+        Node newNode=new Node(data);
+        size++;
+        if(head==null){
+            head=tail=newNode;
+            return;
+        }
+        newNode.next=head;
+        head.prev=newNode;
+        head=newNode;
+    }
+
     
     public static void main(String[] args) {
+
 
     }
 }
