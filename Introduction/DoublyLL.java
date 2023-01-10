@@ -35,10 +35,43 @@ public class DoublyLL {
         Node temp=head;
         while(temp!=null){
             System.out.print(temp.data+"<->");
+            temp=temp.next;
         }
         System.out.println("null");
     }
+
+    //remove first
+    public int removeFirst(){
+        if(head==null){
+            System.out.println("DLL is empty");
+            return Integer.MIN_VALUE;
+        }
+        if(size==1){
+            int val=head.data;
+            head=tail=null;
+            size--;
+            return val;
+        }
+        int val=head.data;
+        head=head.next;
+        head.prev=null;
+        size--;
+        return val;
+
+    }
     public static void main(String[] args) {
+
+        DoublyLL dll=new DoublyLL();
+        dll.addfirst(3);
+        dll.addfirst(2);
+        dll.addfirst(1);
+
+        dll.print();
+        System.out.println(dll.size);
+
+        dll.removeFirst();
+        dll.print();
+        System.out.println(dll.size);
 
 
     }
